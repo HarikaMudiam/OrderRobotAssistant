@@ -1,0 +1,11 @@
+==============================================================================
+Tasks :: Template robot main suite.                                           
+==============================================================================
+Order robots from RobotSpareBin Industries Inc                        | FAIL |
+Keyword 'Submit the form' failed after retrying 3 times. The last error was: Button with locator 'order-another' not found.
+------------------------------------------------------------------------------
+Tasks :: Template robot main suite.                                   | FAIL |
+1 task, 0 passed, 1 failed
+==============================================================================
+Output:  /Users/sreyash/Desktop/OrderRobot/output/output.xml
+Log:     /Users/sreyash/Desktop/OrderRobot/output/log.html
