@@ -10,6 +10,7 @@ Library             RPA.Dialogs
 Library             RPA.FileSystem
 Library             RPA.Archive
 Library             RPA.Dialogs
+Library             RPA.Robocorp.Vault
 
 
 *** Tasks ***
@@ -21,7 +22,9 @@ Order robots from RobotSpareBin Industries Inc
 
 *** Keywords ***
 Open the robot order website
-    Open Available Browser    https://robotsparebinindustries.com/#/robot-order
+    ${secret}=    Get Secret    url
+    Open Available Browser    ${secret}[BrowserURL]
+    #Open Available Browser    https://robotsparebinindustries.com/#/robot-order
 
 Input csv file path from user before download
     Add heading    Provide CSV File Path
@@ -65,4 +68,4 @@ Add csv details into form
         Wait Until Keyword Succeeds    4x    2 sec    Submit the form    ${order}
         Wait Until Keyword Succeeds    4x    2 sec    Take Screenshot    ${order}
     END
-    Archive Folder With Zip    ${OUTPUT_DIR}${/}    mydocs.zip    include=*.pdf
+    Archive Folder With Zip    ${OUTPUT_DIR}${/}    ${OUTPUT_DIR}${/}Receipts.zip    include=*.pdf
